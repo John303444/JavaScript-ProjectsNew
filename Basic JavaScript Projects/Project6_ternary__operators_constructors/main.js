@@ -1,6 +1,11 @@
-fubction Ride_Function() {
-    var Height, Can_ride;
-    Height = document.getElementByIdElementById("Height").value;
-    Can_ride = (Height < 52) ? "You are too short to ride." : "You are tall enough to ride!";
-    document.getElementById("Ride").innerHTML = Can_ride;
+function outerFunction() {
+    var height = document.getElementById("Height").value;
+
+    function displayMessage(message) {
+        document.getElementById("Nested_Function").innerHTML = message;
+    }
+    var resault = (height >= 52)
+        ? "You are tall enough to ride."
+        : "You are not tall enough to ride.";
+    displayMessage(resault);//call the nested function    
 }
