@@ -1,3 +1,20 @@
+function countdown() {
+  var seconds = document.getElementById("seconds").value;
+
+  function tick() {
+    seconds = seconds - 1;
+    timeRanges.innerHTML = seconds;
+    var time = setTimeout(tick, 1000);
+    if (seconds ==-1) {
+      alert("Time's up!");
+      clearTimeout(time);
+      timer.innerHTML = "";
+    }
+
+}
+tick();
+}
+
 let slideIndex = 1;
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -36,5 +53,4 @@ function showSlides(n) {
   slides[slideIndex - 1].style.display = "block";
   dots[slideIndex - 1].classList.add("active");
 }
-
 
